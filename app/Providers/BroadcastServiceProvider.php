@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Providers;
+namespace BatataSender\Providers;
 
-use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Broadcast;
 
 class BroadcastServiceProvider extends ServiceProvider
 {
