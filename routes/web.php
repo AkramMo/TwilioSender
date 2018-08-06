@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('Home');
+    return view('home');
 });
 
 Route::group(['middleware' => ['web']], function() {
