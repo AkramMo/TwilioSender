@@ -18,15 +18,12 @@ class SenderController extends Controller
     {
      
         $this->validate($request, [
-            'email' => 'required|email',
             'sid' => 'required|max:240',
             'number' => 'required',
             'twilio_token' => 'required|max:240',
             'inputFile' => 'required|max:100000|mimes:txt',
             'message' => 'required|max:1600'
         ], [
-            'email.required' => ' The email field is required',
-            'email.email' => 'The email formait is wrong',
             'sid.required' => 'The account SID is required',
             'number.required' => 'The twilio phone number is required',
             'twilio_token' => 'The twilio token is required',

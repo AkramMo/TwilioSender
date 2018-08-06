@@ -30,20 +30,13 @@
                             </ul>
                         </div>
                     @endif
-         
-                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
                 <div class="form-group {{ $errors->has('number') ? 'has-error' : '' }}">
                     <label for="number">Twilio phone number</label>
                     <input type="texte" class="form-control" id="number" name="number" placeholder="Phone Number">
                     <span class="text-danger">{{ $errors->first('number') }}</span>
                 </div>
                 <div class="form-group {{ $errors->has('sid') ? 'has-error' : '' }}">
-                    <label for="sid">Account SID</label>
+                    <label for="sid">Twilio account SID</label>
                     <input type="texte" class="form-control" id="sid" name="sid" placeholder="SID">
                     <span class="text-danger">{{ $errors->first('sid') }}</span>
                 </div>
