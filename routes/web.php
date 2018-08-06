@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('sendSms', 'SenderController@sendSms')->name('sendSms');
+Route::post('form-validation', 'SenderController@formValidationPost')->name('form-validation');
+
+// View Sender
+Route::get('/sender', 'SenderController@senderView')->name('sender');
