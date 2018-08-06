@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
 
 Auth::routes();
@@ -20,7 +21,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('sendSms', 'SenderController@sendSms')->name('sendSms');
-Route::post('form-validation', 'SenderController@formValidationPost')->name('form-validation');
 
-// View Sender
-Route::get('/sender', 'SenderController@senderView')->name('sender');
+
+Route::group([
+    'middleware' => 'auth'
+], function ($router) {
+    Route::post('sender', 'SenderController@formValidationPost')->name('form-validation');
+    // View Sender
+    Route::get('sender', 'SenderController@senderView')->name('sender');
+});
